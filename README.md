@@ -14,6 +14,7 @@
 ```
 # Lưu ý
 - Chỉ lấy post header (phần tiêu đề bài viết) và post body (phần nội dung)
+- Proxy muốn sử dụng SOCKS5 thì sài dạng `-proxy=socks5://ip:port` còn nếu proxy thì sài `-proxy=http://ip:port`
 # Ý tưởng
 - Sửa lại link ảnh public chạy qua proxy.php của voz
 - Tự fetch ảnh attachment và trả về dạng base64

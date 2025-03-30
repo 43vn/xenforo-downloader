@@ -25,7 +25,7 @@ func GetTotalPage(body []byte) int {
 	lastPagURL := pageURL[len(pageURL)-1]
 	lastParts := lastPagURL[strings.LastIndex(lastPagURL, "/")+1:]
 	fmt.Sscanf(strings.TrimPrefix(lastParts, "page-"), "%d", &totalPage)
-	return totalPage
+	return totalPage + 1
 }
 
 func GetPostData(body []byte) string {

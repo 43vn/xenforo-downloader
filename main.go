@@ -37,7 +37,7 @@ func init() {
 					return dialer.Dial(network, addr)
 				},
 			}
-		} else {
+		} else if strings.HasPrefix(Proxy, "http://") {
 			proxyURL, err := url.Parse(Proxy)
 			if err != nil {
 				log.Fatal("Error parsing proxy URL:", err)
@@ -127,7 +127,7 @@ func processURL() {
 			os.WriteFile(fmt.Sprintf("%s/index.html", projectName), []byte(indexContent), 0644)
 		}
 		for p := range totalPage {
-			if p == 0 {
+			if p == 0 || p == 1 {
 				continue
 			}
 			fileName := fmt.Sprintf("%s/page-%d.html", projectName, p)
